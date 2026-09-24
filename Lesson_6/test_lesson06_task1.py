@@ -11,6 +11,7 @@ def test_dynamic_loading():
     driver.get("https://the-internet.herokuapp.com/dynamic_loading/2")
 
     start_btn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div#start button")))
+    
     start_btn.click()
 
     finish_msg = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#finish h4")))
