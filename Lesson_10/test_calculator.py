@@ -3,10 +3,13 @@ from allure_commons.types import Severity
 from selenium.webdriver.support.ui import WebDriverWait
 from calculator_page import SlowCalculatorPage
 
+
 @allure.feature("Калькулятор")
 @allure.story("Арифметические операции")
 @allure.title("Тест сложения: 7 + 8 = 15")
-@allure.description("Проверка работы калькулятора без выставления таймера с задания №7.")
+@allure.description(
+    "Проверка работы калькулятора без выставления таймера с задания №7."
+)
 @allure.severity(Severity.CRITICAL)
 def test_calculator_addition(chrome_driver):
     calc = SlowCalculatorPage(chrome_driver)
@@ -31,7 +34,8 @@ def test_calculator_addition(chrome_driver):
         # Возвращаем сам результат, а не сравнение
         result = wait.until(
             lambda d: calc.get_result(),
-            message="Не удалось получить значение результата в течение таймаута"
+            message="Не удалось получить значение результата"
+            "в течение таймаута",
         )
 
     with allure.step("Проверить, что результат равен '15'"):

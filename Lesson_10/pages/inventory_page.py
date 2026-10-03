@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class InventoryPage:
     SHOPPING_CART = (By.CLASS_NAME, "shopping_cart_link")
 
